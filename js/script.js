@@ -29,7 +29,7 @@ const root = new Vue({
 
         getEmails() {
 
-            for (let i = 0; i < this.itemsNumber; i++){
+            for (let i = this.emails.length; i < this.itemsNumber; i++){
                 this.getEmail();
                 console.table(this.emails.length);
             };
