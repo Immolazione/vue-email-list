@@ -24,13 +24,56 @@ const root = new Vue({
         getEmail(){
             let result = '';
 
-            for (let i = 0; i < this.itemsNumber; i++) {
+
+            do {
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
                     result = (res.data.response);
                     if(!this.emails.includes(result)) this.emails.push(result);
                 });
-            };
-            console.log(this.emails);
+            } while(this.emails.length < this.itemsNumber);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // while (this.emails.length != this.itemsNumber) { <------ CICLO INFINITOOOOOOOOO!!!!!!
+            //     for (let i = 0; i < this.itemsNumber; i++) {
+
+            //         axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
+            //             result = (res.data.response);
+            //             if(!this.emails.includes(result)) this.emails.push(result);
+            //         });
+            //     };
+            // };
+
+
+            // for (let i = 0; i < this.itemsNumber; i++) {
+            //     axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
+            //         result = (res.data.response);
+            //         if(!this.emails.includes(result)) this.emails.push(result);
+            //     });
+            // };
+            // console.log(this.emails);
         },
     },
     created() {
