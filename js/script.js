@@ -22,77 +22,21 @@ const root = new Vue({
     methods: {
 
         getEmail(){
-
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res =>{
                 let result = (res.data.response);
                 // console.log(res.data);
                 console.log(res.data.response);
-                if(!this.emails.includes(result)) this.emails.push(result);
-                    
+                if(!this.emails.includes(result)) this.emails.push(result);   
             });
         },
 
-        getEmails(number) {
-            for (let i = 0; i < number; i++){
+        getEmails() {
+
+            for (let i = 0; i < this.itemsNumber; i++){
                 this.getEmail();
-            }
+                console.table(this.emails.length);
+            };
         },
+
     },
-
-    created() {
-
-        // while (this.emails.length < this.itemsNumber){
-        //     this.getEmail();
-        //     console.log(this.emails.length)
-        // };
-
-        this.getEmails(this.itemsNumber);
-
-        console.table(this.emails);
-    }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// while (this.emails.length != this.itemsNumber) { <------ CICLO INFINITOOOOOOOOO!!!!!!
-//     for (let i = 0; i < this.itemsNumber; i++) {
-
-//         axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
-//             result = (res.data.response);
-//             if(!this.emails.includes(result)) this.emails.push(result);
-//        });
-//    };
-//};
-
-
-//for (let i = 0; i < this.itemsNumber; i++) {
-//    axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
-//        result = (res.data.response);
-//        if(!this.emails.includes(result)) this.emails.push(result);
-//    });
-//};
-//console.log(this.emails);
