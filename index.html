@@ -11,9 +11,12 @@
 </head>
 <body>
     <div id="root">
-        <ul v-if="emails.length === itemsNumber">
-            <li v-for="email in emails">{{ email }}</li>
-        </ul>
+        <div class="container w-50 mt-5" v-if="emails.length === itemsNumber">
+            <h1 class="text-danger">EMAIL LIST:</h1>
+            <ul class="list-group">
+                <li class="list-group-item" v-for="email in emails">{{ email }}</li>
+            </ul>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>
