@@ -11,10 +11,11 @@
 </head>
 <body>
     <div id="root">
-        <button @click="getEmails">CLICCA</button>
-        <div class="container w-50 mt-5" v-if="emails.length === itemsNumber">
+        <div class="container w-50 mt-5">
+            <button @click="getEmails">GENERA</button>
+            <button @click="deleteEmails" >ELIMINA</button>
             <h1 class="text-danger">EMAIL LIST:</h1>
-            <ul class="list-group">
+            <ul class="list-group"   v-if="emails.length === itemsNumber">
                 <li class="list-group-item" v-for="email in emails">{{ email }}</li>
             </ul>
         </div>

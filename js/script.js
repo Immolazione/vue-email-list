@@ -22,7 +22,7 @@ const root = new Vue({
     methods: {
 
         getEmail(){
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res =>{
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
                 if(!this.emails.includes(res.data.response)) this.emails.push(res.data.response);   
             });
         },
@@ -34,6 +34,10 @@ const root = new Vue({
                 console.table(this.emails.length);
             };
         },
+
+        deleteEmails() {
+            this.emails = [];
+        }
 
     },
 });
