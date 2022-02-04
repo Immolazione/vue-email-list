@@ -22,15 +22,36 @@ const root = new Vue({
     methods: {
 
         getEmail(){
-            let result = '';
+
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res =>{
+                let result = (res.data.response);
+                console.log(result);
+                if(!this.emails.includes(result)) this.emails.push(result);
+            });
+        },
+
+        getEmails(number) {
+            for (let i = 0; i < number; i++){
+                this.getEmail();
+            }
+        },
+    },
+
+    created() {
+
+        // while (this.emails.length < this.itemsNumber){
+        //     this.getEmail();
+        //     console.log(this.emails.length)
+        // };
+
+        this.getEmails(this.itemsNumber);
+
+        console.table(this.emails);
+    }
+});
 
 
-            do {
-                axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
-                    result = (res.data.response);
-                    if(!this.emails.includes(result)) this.emails.push(result);
-                });
-            } while(this.emails.length < this.itemsNumber);
+
 
 
 
@@ -74,9 +95,3 @@ const root = new Vue({
             //     });
             // };
             // console.log(this.emails);
-        },
-    },
-    created() {
-        this.getEmail();
-    }
-});
