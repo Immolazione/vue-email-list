@@ -22,12 +22,16 @@ const root = new Vue({
     methods: {
 
         getEmail(){
+            let result = '';
+
             for (let i = 0; i < this.itemsNumber; i++) {
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
-                    console.log(res.data.response);
+                    result = (res.data.response);
+                    this.emails.push(result);
                 });
-            }
-        }
+            };
+            console.log(this.emails);
+        },
     },
     created() {
         this.getEmail();
