@@ -78,22 +78,21 @@ const root = new Vue({
 
 
 
+// while (this.emails.length != this.itemsNumber) { <------ CICLO INFINITOOOOOOOOO!!!!!!
+//     for (let i = 0; i < this.itemsNumber; i++) {
 
-            // while (this.emails.length != this.itemsNumber) { <------ CICLO INFINITOOOOOOOOO!!!!!!
-            //     for (let i = 0; i < this.itemsNumber; i++) {
-
-            //         axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
-            //             result = (res.data.response);
-            //             if(!this.emails.includes(result)) this.emails.push(result);
-            //         });
-            //     };
-            // };
+//         axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
+//             result = (res.data.response);
+//             if(!this.emails.includes(result)) this.emails.push(result);
+//        });
+//    };
+//};
 
 
-            // for (let i = 0; i < this.itemsNumber; i++) {
-            //     axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
-            //         result = (res.data.response);
-            //         if(!this.emails.includes(result)) this.emails.push(result);
-            //     });
-            // };
-            // console.log(this.emails);
+//for (let i = 0; i < this.itemsNumber; i++) {
+//    axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
+//        result = (res.data.response);
+//        if(!this.emails.includes(result)) this.emails.push(result);
+//    });
+//};
+//console.log(this.emails);
