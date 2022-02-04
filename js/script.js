@@ -17,6 +17,19 @@ const root = new Vue({
     el: '#root',
     data: {
         emails: [],
+        itemsNumber: 10,
     },
-    
+    methods: {
+
+        getEmail(){
+            for (let i = 0; i < this.itemsNumber; i++) {
+                axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
+                    console.log(res.data.response);
+                });
+            }
+        }
+    },
+    created() {
+        this.getEmail();
+    }
 });
